@@ -9,19 +9,22 @@
 </head>
 
 <body>
-  <form action="http://localhost:3000">
+  <form action="http://localhost:3000" method="post" enctype="multipart/form-data"> <!--"enctype=multipart/form" se usa en los formularios cuando queremos subir archivos-->
+    <!--input que crea un TextFiel con etiqueta "nombre" para obtener texto-->
     <label for="nombre">nombre</label>
     <input type="text" name="nombre" id="nombre" />
     <br>
+    <!--input que crea un TextFiel con etiqueta "apellido" para obtener texto-->
     <label for="apellido">apellido</label>
     <input type="text" name="apellido" id="apellido" />
     <br>
-    <button type="submit">Enviar</button>
-    <!--    
+    <!--input para subir archivos con "enctype=multipart/form" especificado en los atributos de "form"-->   
     <label for="archivo">archivo</label>
     <input type="file" name="archivo" id="archivo" />
-    -->
-
+    <br>
+    <!--crea un boton con etiqueta "Enviar" para enviar la informacion diligenciada en el formulario 
+    al servidor especificado en los atributos de "form" en "action="http://localhost:3000""-->
+    <button type="submit">Enviar</button>
   </form>
 </body>
 
