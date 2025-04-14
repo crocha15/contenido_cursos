@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Formulario con css</title>
+
+    <style>
+
+        body {
+            background-color: wheat;
+        }
+
+        * {
+            box-sizing: border-box;
+            /*permite que el ancho y alto de un elemento incluyan el relleno y el borde*/
+        }
+
+        input,
+        select,
+        textarea {
+            /*le da estulo al "input"*/
+            width: 100%;
+            /*afecta el ancho del textfield*/
+            padding: 20px 50px;
+            /*afecta el ancho y altura interna del textfiel donde se escribe*/
+            margin: 10px 15px;
+            /*da margen entre los elementos del input, altura y ancho*/
+            border: 2px solid gray;
+            /*resalta la linea del borde del textfield, le puedes dar color*/
+            border-radius: 5px;
+            /*le da curva a los bordes del textfield, puedes dar curva por separado a cada borde o a todos en general dejando un unico valor*/
+            background-color: white;
+            /*da color al fondo del textfield"*/
+            color: black;
+            /*da color a la letra dentro del textfield"*/
+            background-image: url(img/searchicon.png);
+            /*agrega una imagen en el background*/
+            background-repeat: no-repeat;
+            /*no permite que la imagen se repita dentro del background*/
+            background-position: 20px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0px;
+            display: block;
+            /*respeta las instrucciones otorganas a "label"*/
+            color: black;
+        }
+
+        input:focus {
+            border: 4px solid aquamarine;
+            /*da estilo al textfield cuando el cursor (mouse) se coloca sobre el*/
+            border-radius: 5px;
+            /*le da curva a los bordes del textfield*/
+        }
+
+        select {
+            height: 40px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: green;
+            border: none;
+            /*quita el borde al boton*/
+            border-radius: 4px;
+            color: white;
+            padding: 10px 30px;
+            text-decoration: none;
+            /*no permite que el navegador le de estilo por default*/
+            margin: 4px 6px;
+            /*da margen entre los elementos del input, altura y ancho*/
+            cursor: pointer;
+            /*al pasar sobre el boton el cursor cambia a una manito*/
+        }
+
+        button:hover {
+            /*permite crear un evento en el boton con las reglas del css que se coloquen aca dentro*/
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+        }
+
+        ::placeholder {
+            color: gray;
+            /*da color al placeholder "pon tu nombre aquí"*/
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Formulario usando css</h1>
+
+    <div class="container">
+        <form action="http://localhost:3000" method="post">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" placeholder="pon tu nombre aquí" required>
+
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido" id="apellido" placeholder="pon tu apellido aquí" required>
+
+            <label for="pais">País: </label>
+            <select name="pais" id="pais" required>
+                <option disabled selected hidden>Seleccione</option>
+                <!--"disable selected" no permite seleccionar la opcion "Seleccione"-->
+                <option>Colombia</option>
+                <option>Peru</option>
+                <option>Mexico</option>
+                <option>Venezuela</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
